@@ -35,7 +35,7 @@
               "status": null,
               "arguments": {
                 "name": "ZeroFox",
-                "config": "''",
+                "config": "",
                 "params": {
                   "ip": ""
                 },
@@ -105,7 +105,7 @@
               "status": null,
               "arguments": {
                 "name": "ZeroFox",
-                "config": "''",
+                "config": "",
                 "params": {
                   "domain": ""
                 },
@@ -175,7 +175,7 @@
               "status": null,
               "arguments": {
                 "name": "ZeroFox",
-                "config": "''",
+                "config": "",
                 "params": {
                   "email": ""
                 },
@@ -245,7 +245,7 @@
               "status": null,
               "arguments": {
                 "name": "ZeroFox",
-                "config": "''",
+                "config": "",
                 "params": {
                   "hash": ""
                 },
@@ -315,7 +315,7 @@
               "status": null,
               "arguments": {
                 "name": "ZeroFox",
-                "config": "''",
+                "config": "",
                 "params": {
                   "created_after": ""
                 },
@@ -385,7 +385,7 @@
               "status": null,
               "arguments": {
                 "name": "ZeroFox",
-                "config": "''",
+                "config": "",
                 "params": {
                   "account": "",
                   "alert_type": "",
@@ -471,7 +471,7 @@
               "status": null,
               "arguments": {
                 "name": "ZeroFox",
-                "config": "''",
+                "config": "",
                 "params": {
                   "alert_id": ""
                 },
@@ -541,7 +541,7 @@
               "status": null,
               "arguments": {
                 "name": "ZeroFox",
-                "config": "''",
+                "config": "",
                 "params": {
                   "alert_id": "",
                   "username": ""
@@ -612,7 +612,7 @@
               "status": null,
               "arguments": {
                 "name": "ZeroFox",
-                "config": "''",
+                "config": "",
                 "params": {
                   "alert_id": ""
                 },
@@ -682,7 +682,7 @@
               "status": null,
               "arguments": {
                 "name": "ZeroFox",
-                "config": "''",
+                "config": "",
                 "params": {
                   "alert_id": ""
                 },
@@ -752,7 +752,7 @@
               "status": null,
               "arguments": {
                 "name": "ZeroFox",
-                "config": "''",
+                "config": "",
                 "params": {
                   "alert_id": ""
                 },
@@ -822,7 +822,7 @@
               "status": null,
               "arguments": {
                 "name": "ZeroFox",
-                "config": "''",
+                "config": "",
                 "params": {
                   "alert_id": ""
                 },
@@ -892,7 +892,7 @@
               "status": null,
               "arguments": {
                 "name": "ZeroFox",
-                "config": "''",
+                "config": "",
                 "params": {
                   "alert_id": "",
                   "action": "",
@@ -964,7 +964,7 @@
               "status": null,
               "arguments": {
                 "name": "ZeroFox",
-                "config": "''",
+                "config": "",
                 "params": {
                   "alert_id": "",
                   "notes": ""
@@ -1035,7 +1035,7 @@
               "status": null,
               "arguments": {
                 "name": "ZeroFox",
-                "config": "''",
+                "config": "",
                 "params": {
                   "name": "",
                   "policy": "",
@@ -1109,7 +1109,7 @@
               "status": null,
               "arguments": {
                 "name": "ZeroFox",
-                "config": "''",
+                "config": "",
                 "params": {
                   "email_address": "",
                   "group": "",
@@ -1186,7 +1186,7 @@
               "status": null,
               "arguments": {
                 "name": "ZeroFox",
-                "config": "''",
+                "config": "",
                 "params": [],
                 "version": "1.0.0",
                 "connector": "zerofox",
@@ -1254,7 +1254,7 @@
               "status": null,
               "arguments": {
                 "name": "ZeroFox",
-                "config": "''",
+                "config": "",
                 "params": [],
                 "version": "1.0.0",
                 "connector": "zerofox",
@@ -1322,7 +1322,7 @@
               "status": null,
               "arguments": {
                 "name": "ZeroFox",
-                "config": "''",
+                "config": "",
                 "params": {
                   "entity_id": "",
                   "source": "",

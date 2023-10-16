@@ -1,0 +1,1379 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "18de8f0d-99c7-4184-b5ef-aac46952d9dd",
+      "@type": "WorkflowCollection",
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "912cf91b-9922-43fc-a01b-754199aa0879",
+          "collection": "/api/3/workflow_collections/18de8f0d-99c7-4184-b5ef-aac46952d9dd",
+          "steps": [
+            {
+              "uuid": "d545e854-5f81-4d59-8f63-0b3039f43766",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "e5e06962-3fcc-433f-ab6a-8fda7e4cf1cf",
+              "@type": "WorkflowStep",
+              "name": "Get IP Lookup",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ZeroFox",
+                "config": "''",
+                "params": {
+                  "ip": ""
+                },
+                "version": "1.0.0",
+                "connector": "zerofox",
+                "operation": "get_ip_lookup",
+                "operationTitle": "Get IP Lookup"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves a report from ZeroFox for the IP address submitted to determine if it is malicious based on the IP address you have specified.",
+          "name": "Get IP Lookup",
+          "tag": "#ZeroFox",
+          "recordTags": [
+            "Zerofox",
+            "zerofox"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/d545e854-5f81-4d59-8f63-0b3039f43766",
+          "routes": [
+            {
+              "uuid": "1d705e20-0c56-417c-b3f0-fee68a8c1573",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get IP Lookup",
+              "sourceStep": "/api/3/workflow_steps/d545e854-5f81-4d59-8f63-0b3039f43766",
+              "targetStep": "/api/3/workflow_steps/e5e06962-3fcc-433f-ab6a-8fda7e4cf1cf"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "65677dfd-7fe2-4cfb-b55c-b2419abf0969",
+          "collection": "/api/3/workflow_collections/18de8f0d-99c7-4184-b5ef-aac46952d9dd",
+          "steps": [
+            {
+              "uuid": "f4471632-b8db-4b95-90b6-41592335ff3a",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "eb000a27-1e38-43ce-ab4a-f174a2afbb2c",
+              "@type": "WorkflowStep",
+              "name": "Get Domain Lookup",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ZeroFox",
+                "config": "''",
+                "params": {
+                  "domain": ""
+                },
+                "version": "1.0.0",
+                "connector": "zerofox",
+                "operation": "get_domain_lookup",
+                "operationTitle": "Get Domain Lookup"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves a report from ZeroFox for the domain submitted to determine if it is suspicious based on the domain name you have specified.",
+          "name": "Get Domain Lookup",
+          "tag": "#ZeroFox",
+          "recordTags": [
+            "Zerofox",
+            "zerofox"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/f4471632-b8db-4b95-90b6-41592335ff3a",
+          "routes": [
+            {
+              "uuid": "ea1c4a2e-5ded-430d-b51e-75d0a801f2d1",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Domain Lookup",
+              "sourceStep": "/api/3/workflow_steps/f4471632-b8db-4b95-90b6-41592335ff3a",
+              "targetStep": "/api/3/workflow_steps/eb000a27-1e38-43ce-ab4a-f174a2afbb2c"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "19aaf713-4d92-46e6-9a2f-96c266f4b3cb",
+          "collection": "/api/3/workflow_collections/18de8f0d-99c7-4184-b5ef-aac46952d9dd",
+          "steps": [
+            {
+              "uuid": "30c0029a-0152-4aa6-b824-1cc9d5019271",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "b88d6f70-68a9-497f-a92a-ff5091f3f99b",
+              "@type": "WorkflowStep",
+              "name": "Get Email Lookup",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ZeroFox",
+                "config": "''",
+                "params": {
+                  "email": ""
+                },
+                "version": "1.0.0",
+                "connector": "zerofox",
+                "operation": "get_email_lookup",
+                "operationTitle": "Get Email Lookup"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves a report from ZeroFox for the email address submitted to determine if it is suspicious based on the email address you have specified.",
+          "name": "Get Email Lookup",
+          "tag": "#ZeroFox",
+          "recordTags": [
+            "Zerofox",
+            "zerofox"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/30c0029a-0152-4aa6-b824-1cc9d5019271",
+          "routes": [
+            {
+              "uuid": "1a0ce85f-cc6e-4dea-9f0b-9eefe4db3edf",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Email Lookup",
+              "sourceStep": "/api/3/workflow_steps/30c0029a-0152-4aa6-b824-1cc9d5019271",
+              "targetStep": "/api/3/workflow_steps/b88d6f70-68a9-497f-a92a-ff5091f3f99b"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "a2c87d11-5a68-4dff-aef0-3d0763be3095",
+          "collection": "/api/3/workflow_collections/18de8f0d-99c7-4184-b5ef-aac46952d9dd",
+          "steps": [
+            {
+              "uuid": "5af00c1f-175f-424d-ac38-240596c25f7d",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "0f30a447-e50e-4586-9bf4-f039c6cbe2ff",
+              "@type": "WorkflowStep",
+              "name": "Get FileHash Lookup",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ZeroFox",
+                "config": "''",
+                "params": {
+                  "hash": ""
+                },
+                "version": "1.0.0",
+                "connector": "zerofox",
+                "operation": "get_filehash_lookup",
+                "operationTitle": "Get FileHash Lookup"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves a report from ZeroFox for the hash submitted to determine if it is suspicious based on the domain name you have specified.",
+          "name": "Get FileHash Lookup",
+          "tag": "#ZeroFox",
+          "recordTags": [
+            "Zerofox",
+            "zerofox"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/5af00c1f-175f-424d-ac38-240596c25f7d",
+          "routes": [
+            {
+              "uuid": "92cf5dfa-f7a4-4f0f-9866-1daf2cbdb520",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get FileHash Lookup",
+              "sourceStep": "/api/3/workflow_steps/5af00c1f-175f-424d-ac38-240596c25f7d",
+              "targetStep": "/api/3/workflow_steps/0f30a447-e50e-4586-9bf4-f039c6cbe2ff"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "990e3476-3b71-42b7-a2c2-49189f871cb8",
+          "collection": "/api/3/workflow_collections/18de8f0d-99c7-4184-b5ef-aac46952d9dd",
+          "steps": [
+            {
+              "uuid": "28b74a8d-9abf-4fa4-b75c-5389b9b8ae7a",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "4377daa4-a916-4680-979d-b8db88c5ff8a",
+              "@type": "WorkflowStep",
+              "name": "Get Exploits Lookup",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ZeroFox",
+                "config": "''",
+                "params": {
+                  "created_after": ""
+                },
+                "version": "1.0.0",
+                "connector": "zerofox",
+                "operation": "get_exploits_lookup",
+                "operationTitle": "Get Exploits Lookup"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves a report from ZeroFox based on the created after you have specified.",
+          "name": "Get Exploits Lookup",
+          "tag": "#ZeroFox",
+          "recordTags": [
+            "Zerofox",
+            "zerofox"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/28b74a8d-9abf-4fa4-b75c-5389b9b8ae7a",
+          "routes": [
+            {
+              "uuid": "93562ddb-8945-46fe-aef5-1968b94969c7",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Exploits Lookup",
+              "sourceStep": "/api/3/workflow_steps/28b74a8d-9abf-4fa4-b75c-5389b9b8ae7a",
+              "targetStep": "/api/3/workflow_steps/4377daa4-a916-4680-979d-b8db88c5ff8a"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "2f7527a5-4663-4dee-832f-2f8125f6a289",
+          "collection": "/api/3/workflow_collections/18de8f0d-99c7-4184-b5ef-aac46952d9dd",
+          "steps": [
+            {
+              "uuid": "af3e7e62-b58d-4f28-ba96-001db4beaa6a",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "5568c824-fd9c-49d9-a9a3-325c221bc030",
+              "@type": "WorkflowStep",
+              "name": "Get Alerts List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ZeroFox",
+                "config": "''",
+                "params": {
+                  "account": "",
+                  "alert_type": "",
+                  "assignee": "",
+                  "entity": "",
+                  "entity_term": "",
+                  "min_timestamp": "",
+                  "max_timestamp": "",
+                  "last_modified": "",
+                  "network": "",
+                  "risk_rating": "",
+                  "sort_direction": "",
+                  "sort_field": "",
+                  "status": "",
+                  "escalated": true,
+                  "limit": 10,
+                  "offset": "",
+                  "additional_fields": ""
+                },
+                "version": "1.0.0",
+                "connector": "zerofox",
+                "operation": "get_alerts_list",
+                "operationTitle": "Get Alerts List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves a list of all alerts from ZeroFox based on the input parameters you have specified.",
+          "name": "Get Alerts List",
+          "tag": "#ZeroFox",
+          "recordTags": [
+            "Zerofox",
+            "zerofox"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/af3e7e62-b58d-4f28-ba96-001db4beaa6a",
+          "routes": [
+            {
+              "uuid": "3db029a1-3d30-44e4-83d3-a9b46f056bce",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Alerts List",
+              "sourceStep": "/api/3/workflow_steps/af3e7e62-b58d-4f28-ba96-001db4beaa6a",
+              "targetStep": "/api/3/workflow_steps/5568c824-fd9c-49d9-a9a3-325c221bc030"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "ac994e62-19cf-4f01-9370-78bafbd71920",
+          "collection": "/api/3/workflow_collections/18de8f0d-99c7-4184-b5ef-aac46952d9dd",
+          "steps": [
+            {
+              "uuid": "d0ca8d25-1c3e-44c9-8112-7f4b9d590b6e",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "0b45d2d4-8c44-4778-8f31-a2d4009ca33d",
+              "@type": "WorkflowStep",
+              "name": "Get Alert Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ZeroFox",
+                "config": "''",
+                "params": {
+                  "alert_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "zerofox",
+                "operation": "get_alert_details",
+                "operationTitle": "Get Alert Details"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves a specific alert details from ZeroFox based on the alert ID you have specified.",
+          "name": "Get Alert Details",
+          "tag": "#ZeroFox",
+          "recordTags": [
+            "Zerofox",
+            "zerofox"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/d0ca8d25-1c3e-44c9-8112-7f4b9d590b6e",
+          "routes": [
+            {
+              "uuid": "60b2315b-83c5-4d69-915d-d2e4e4455061",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Alert Details",
+              "sourceStep": "/api/3/workflow_steps/d0ca8d25-1c3e-44c9-8112-7f4b9d590b6e",
+              "targetStep": "/api/3/workflow_steps/0b45d2d4-8c44-4778-8f31-a2d4009ca33d"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "12af4964-c5aa-45e2-9213-6bdd8079eedd",
+          "collection": "/api/3/workflow_collections/18de8f0d-99c7-4184-b5ef-aac46952d9dd",
+          "steps": [
+            {
+              "uuid": "908928d5-ed85-408e-9fb7-6d72fbb5e441",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "82a90ff5-dd30-4279-a607-42151bce510a",
+              "@type": "WorkflowStep",
+              "name": "Assign Alert to User",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ZeroFox",
+                "config": "''",
+                "params": {
+                  "alert_id": "",
+                  "username": ""
+                },
+                "version": "1.0.0",
+                "connector": "zerofox",
+                "operation": "assign_alert_to_user",
+                "operationTitle": "Assign Alert to User"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Assigns a alert to a specific user in ZeroFox based on the alert ID and user name you have specified.",
+          "name": "Assign Alert to User",
+          "tag": "#ZeroFox",
+          "recordTags": [
+            "Zerofox",
+            "zerofox"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/908928d5-ed85-408e-9fb7-6d72fbb5e441",
+          "routes": [
+            {
+              "uuid": "474abf87-4aa7-43ce-aa97-9eddd18313e1",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Assign Alert to User",
+              "sourceStep": "/api/3/workflow_steps/908928d5-ed85-408e-9fb7-6d72fbb5e441",
+              "targetStep": "/api/3/workflow_steps/82a90ff5-dd30-4279-a607-42151bce510a"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "afc7cf5d-5fb7-4827-9a0c-955d51a08d73",
+          "collection": "/api/3/workflow_collections/18de8f0d-99c7-4184-b5ef-aac46952d9dd",
+          "steps": [
+            {
+              "uuid": "33845a71-95e1-4ac6-a410-7e17be3467a0",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "8e64856a-05d6-4ba1-82c0-cc1206416fcd",
+              "@type": "WorkflowStep",
+              "name": "Open Alert",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ZeroFox",
+                "config": "''",
+                "params": {
+                  "alert_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "zerofox",
+                "operation": "open_alert",
+                "operationTitle": "Open Alert"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Opens an specific alert in ZeroFox based on the alert ID you have specified.",
+          "name": "Open Alert",
+          "tag": "#ZeroFox",
+          "recordTags": [
+            "Zerofox",
+            "zerofox"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/33845a71-95e1-4ac6-a410-7e17be3467a0",
+          "routes": [
+            {
+              "uuid": "47de5ce0-1e3b-44f2-8898-ef5e9d9ba2d7",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Open Alert",
+              "sourceStep": "/api/3/workflow_steps/33845a71-95e1-4ac6-a410-7e17be3467a0",
+              "targetStep": "/api/3/workflow_steps/8e64856a-05d6-4ba1-82c0-cc1206416fcd"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "56682dee-4c34-4a94-83bf-07b9be892a49",
+          "collection": "/api/3/workflow_collections/18de8f0d-99c7-4184-b5ef-aac46952d9dd",
+          "steps": [
+            {
+              "uuid": "10172b49-ca86-4130-b417-f73bce9606a0",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "30e019a4-ae56-402e-8bc3-01224ebe3d7a",
+              "@type": "WorkflowStep",
+              "name": "Close Alert",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ZeroFox",
+                "config": "''",
+                "params": {
+                  "alert_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "zerofox",
+                "operation": "close_alert",
+                "operationTitle": "Close Alert"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Closed an specific alert in ZeroFox based on the alert ID you have specified.",
+          "name": "Close Alert",
+          "tag": "#ZeroFox",
+          "recordTags": [
+            "Zerofox",
+            "zerofox"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/10172b49-ca86-4130-b417-f73bce9606a0",
+          "routes": [
+            {
+              "uuid": "653c223a-7917-450e-813b-ebf9e64196a3",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Close Alert",
+              "sourceStep": "/api/3/workflow_steps/10172b49-ca86-4130-b417-f73bce9606a0",
+              "targetStep": "/api/3/workflow_steps/30e019a4-ae56-402e-8bc3-01224ebe3d7a"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "8615c4a1-f8a0-4a69-b0d6-0dc5bd2b3009",
+          "collection": "/api/3/workflow_collections/18de8f0d-99c7-4184-b5ef-aac46952d9dd",
+          "steps": [
+            {
+              "uuid": "1db824a2-8267-4359-a1c8-7b17f5e22919",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "9f664411-a76c-4cd8-8d77-8d42d2b59038",
+              "@type": "WorkflowStep",
+              "name": "Alert Request Takedown",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ZeroFox",
+                "config": "''",
+                "params": {
+                  "alert_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "zerofox",
+                "operation": "alert_request_takedown",
+                "operationTitle": "Alert Request Takedown"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Requests a takedown of a specified alert in ZeroFox based on the alert ID you have specified.",
+          "name": "Alert Request Takedown",
+          "tag": "#ZeroFox",
+          "recordTags": [
+            "Zerofox",
+            "zerofox"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/1db824a2-8267-4359-a1c8-7b17f5e22919",
+          "routes": [
+            {
+              "uuid": "d343f224-117d-4fee-ae13-3d2e372de511",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Alert Request Takedown",
+              "sourceStep": "/api/3/workflow_steps/1db824a2-8267-4359-a1c8-7b17f5e22919",
+              "targetStep": "/api/3/workflow_steps/9f664411-a76c-4cd8-8d77-8d42d2b59038"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "53b44736-c08e-4c3c-936e-72423ef6fbb6",
+          "collection": "/api/3/workflow_collections/18de8f0d-99c7-4184-b5ef-aac46952d9dd",
+          "steps": [
+            {
+              "uuid": "0f903454-b871-4067-9b59-59dade3e78e6",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "89aa89ec-8b00-47f6-a365-ff51d5ba308a",
+              "@type": "WorkflowStep",
+              "name": "Alert Cancel Takedown",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ZeroFox",
+                "config": "''",
+                "params": {
+                  "alert_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "zerofox",
+                "operation": "alert_cancel_takedown",
+                "operationTitle": "Alert Cancel Takedown"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Cancels a takedown of a specified alert in ZeroFox based on the alert ID you have specified.",
+          "name": "Alert Cancel Takedown",
+          "tag": "#ZeroFox",
+          "recordTags": [
+            "Zerofox",
+            "zerofox"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/0f903454-b871-4067-9b59-59dade3e78e6",
+          "routes": [
+            {
+              "uuid": "74d61c78-41d3-4ce9-aaec-02c0cb00e3a3",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Alert Cancel Takedown",
+              "sourceStep": "/api/3/workflow_steps/0f903454-b871-4067-9b59-59dade3e78e6",
+              "targetStep": "/api/3/workflow_steps/89aa89ec-8b00-47f6-a365-ff51d5ba308a"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "901c0027-eb2c-4e58-92c9-1d9e9f17221a",
+          "collection": "/api/3/workflow_collections/18de8f0d-99c7-4184-b5ef-aac46952d9dd",
+          "steps": [
+            {
+              "uuid": "1d2914c6-d845-4d89-a2c9-4ba71da4f95c",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "250aa628-0d21-433d-923f-b0b6df58b8be",
+              "@type": "WorkflowStep",
+              "name": "Modify Alert Tags",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ZeroFox",
+                "config": "''",
+                "params": {
+                  "alert_id": "",
+                  "action": "",
+                  "tags_list": ""
+                },
+                "version": "1.0.0",
+                "connector": "zerofox",
+                "operation": "modify_alert_tags",
+                "operationTitle": "Modify Alert Tags"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Adds tags to and or removes tags from a specified alert in ZeroFox based on the alert ID, action, and tags you have specified.",
+          "name": "Modify Alert Tags",
+          "tag": "#ZeroFox",
+          "recordTags": [
+            "Zerofox",
+            "zerofox"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/1d2914c6-d845-4d89-a2c9-4ba71da4f95c",
+          "routes": [
+            {
+              "uuid": "99edf512-afe1-42b2-b78b-f415ec984938",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Modify Alert Tags",
+              "sourceStep": "/api/3/workflow_steps/1d2914c6-d845-4d89-a2c9-4ba71da4f95c",
+              "targetStep": "/api/3/workflow_steps/250aa628-0d21-433d-923f-b0b6df58b8be"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "18d58881-2601-4f63-b68d-6e9835659918",
+          "collection": "/api/3/workflow_collections/18de8f0d-99c7-4184-b5ef-aac46952d9dd",
+          "steps": [
+            {
+              "uuid": "79636156-cc12-4d03-b816-25c4936bd27f",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "e31b8eba-2f32-4d2f-9be2-f06ecc51ca05",
+              "@type": "WorkflowStep",
+              "name": "Modify Alert Notes",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ZeroFox",
+                "config": "''",
+                "params": {
+                  "alert_id": "",
+                  "notes": ""
+                },
+                "version": "1.0.0",
+                "connector": "zerofox",
+                "operation": "modify_alert_notes",
+                "operationTitle": "Modify Alert Notes"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Modify the notes from a specified alert in ZeroFox based on the alert ID and notes you have specified.",
+          "name": "Modify Alert Notes",
+          "tag": "#ZeroFox",
+          "recordTags": [
+            "Zerofox",
+            "zerofox"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/79636156-cc12-4d03-b816-25c4936bd27f",
+          "routes": [
+            {
+              "uuid": "83dd2d8c-6ced-445a-82a2-2e7aac907c87",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Modify Alert Notes",
+              "sourceStep": "/api/3/workflow_steps/79636156-cc12-4d03-b816-25c4936bd27f",
+              "targetStep": "/api/3/workflow_steps/e31b8eba-2f32-4d2f-9be2-f06ecc51ca05"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "3b8787dd-7d7c-415d-8292-65795714b08a",
+          "collection": "/api/3/workflow_collections/18de8f0d-99c7-4184-b5ef-aac46952d9dd",
+          "steps": [
+            {
+              "uuid": "e77b45ec-3481-4c40-ad16-0a6aea85f182",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "f4d2a8ef-f297-4562-8da1-9477818ff0c6",
+              "@type": "WorkflowStep",
+              "name": "Create Entity",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ZeroFox",
+                "config": "''",
+                "params": {
+                  "name": "",
+                  "policy": "",
+                  "strict_name_matching": "",
+                  "tags": "",
+                  "organization": ""
+                },
+                "version": "1.0.0",
+                "connector": "zerofox",
+                "operation": "create_entity",
+                "operationTitle": "Create Entity"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Creates a new entity associated with the company of the authorized user in ZeroFox based on the entity name and other input parameters you have specified.",
+          "name": "Create Entity",
+          "tag": "#ZeroFox",
+          "recordTags": [
+            "Zerofox",
+            "zerofox"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/e77b45ec-3481-4c40-ad16-0a6aea85f182",
+          "routes": [
+            {
+              "uuid": "d6bd512c-369b-4c60-bcc6-0d55f900c643",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Create Entity",
+              "sourceStep": "/api/3/workflow_steps/e77b45ec-3481-4c40-ad16-0a6aea85f182",
+              "targetStep": "/api/3/workflow_steps/f4d2a8ef-f297-4562-8da1-9477818ff0c6"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "20a93cd7-b8fe-4097-9602-10eab13bd166",
+          "collection": "/api/3/workflow_collections/18de8f0d-99c7-4184-b5ef-aac46952d9dd",
+          "steps": [
+            {
+              "uuid": "da04802d-e4fa-4c5f-96c9-d1519bf21a29",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "7fae2c7f-1efe-4202-beae-8893fa06f954",
+              "@type": "WorkflowStep",
+              "name": "Get Entity List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ZeroFox",
+                "config": "''",
+                "params": {
+                  "email_address": "",
+                  "group": "",
+                  "label": "",
+                  "network": "",
+                  "networks": "",
+                  "policy": "",
+                  "type": "",
+                  "page": ""
+                },
+                "version": "1.0.0",
+                "connector": "zerofox",
+                "operation": "get_entity_list",
+                "operationTitle": "Get Entity List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves a list of all entities associated with the company of the authorized user from ZeroFox based on the input parameters you have specified.",
+          "name": "Get Entity List",
+          "tag": "#ZeroFox",
+          "recordTags": [
+            "Zerofox",
+            "zerofox"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/da04802d-e4fa-4c5f-96c9-d1519bf21a29",
+          "routes": [
+            {
+              "uuid": "25d2a378-656a-445f-89cb-d08a3f620d95",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Entity List",
+              "sourceStep": "/api/3/workflow_steps/da04802d-e4fa-4c5f-96c9-d1519bf21a29",
+              "targetStep": "/api/3/workflow_steps/7fae2c7f-1efe-4202-beae-8893fa06f954"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "539a1485-122f-4315-be5a-9b470e56241e",
+          "collection": "/api/3/workflow_collections/18de8f0d-99c7-4184-b5ef-aac46952d9dd",
+          "steps": [
+            {
+              "uuid": "9d0a511e-445e-4c85-890e-77557e22ba16",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "6eee7492-7c78-49f6-b847-3a1344db68db",
+              "@type": "WorkflowStep",
+              "name": "Get Entity Types List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ZeroFox",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "zerofox",
+                "operation": "get_entity_types",
+                "operationTitle": "Get Entity Types List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves the list of all entity types from ZeroFox.",
+          "name": "Get Entity Types List",
+          "tag": "#ZeroFox",
+          "recordTags": [
+            "Zerofox",
+            "zerofox"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/9d0a511e-445e-4c85-890e-77557e22ba16",
+          "routes": [
+            {
+              "uuid": "aa611d5c-a675-42a3-b77b-558f31c8157e",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Entity Types List",
+              "sourceStep": "/api/3/workflow_steps/9d0a511e-445e-4c85-890e-77557e22ba16",
+              "targetStep": "/api/3/workflow_steps/6eee7492-7c78-49f6-b847-3a1344db68db"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "8fc8676b-e807-4edd-81ce-362223201664",
+          "collection": "/api/3/workflow_collections/18de8f0d-99c7-4184-b5ef-aac46952d9dd",
+          "steps": [
+            {
+              "uuid": "180c6937-b1b6-4001-b088-982a9cd1bf3a",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "1cd017d8-6437-459e-b5da-46de95bc4413",
+              "@type": "WorkflowStep",
+              "name": "Get Policy Types List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ZeroFox",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "zerofox",
+                "operation": "get_policy_types",
+                "operationTitle": "Get Policy Types List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves the list of all policy types from ZeroFox.",
+          "name": "Get Policy Types List",
+          "tag": "#ZeroFox",
+          "recordTags": [
+            "Zerofox",
+            "zerofox"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/180c6937-b1b6-4001-b088-982a9cd1bf3a",
+          "routes": [
+            {
+              "uuid": "70e4faeb-e970-4569-b67f-9f28535aa55c",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Policy Types List",
+              "sourceStep": "/api/3/workflow_steps/180c6937-b1b6-4001-b088-982a9cd1bf3a",
+              "targetStep": "/api/3/workflow_steps/1cd017d8-6437-459e-b5da-46de95bc4413"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "5ae47e25-3665-4285-a38f-a43123f7ea21",
+          "collection": "/api/3/workflow_collections/18de8f0d-99c7-4184-b5ef-aac46952d9dd",
+          "steps": [
+            {
+              "uuid": "5e5a3f70-9ae6-4a8c-a9ee-c369d8262bde",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "e29f4216-cf6d-4a51-9305-42d44a064090",
+              "@type": "WorkflowStep",
+              "name": "Submit Threat",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ZeroFox",
+                "config": "''",
+                "params": {
+                  "entity_id": "",
+                  "source": "",
+                  "alert_type": "",
+                  "violation": "",
+                  "notes": ""
+                },
+                "version": "1.0.0",
+                "connector": "zerofox",
+                "operation": "submit_threat",
+                "operationTitle": "Submit Threat"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Submit threats into the alert registry for disruption in ZeroFox based on the entity ID, content, content type, infringement type, and notes you have specified.",
+          "name": "Submit Threat",
+          "tag": "#ZeroFox",
+          "recordTags": [
+            "Zerofox",
+            "zerofox"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/5e5a3f70-9ae6-4a8c-a9ee-c369d8262bde",
+          "routes": [
+            {
+              "uuid": "25e519f7-6c41-4274-884e-e9adc7b32093",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Submit Threat",
+              "sourceStep": "/api/3/workflow_steps/5e5a3f70-9ae6-4a8c-a9ee-c369d8262bde",
+              "targetStep": "/api/3/workflow_steps/e29f4216-cf6d-4a51-9305-42d44a064090"
+            }
+          ]
+        }
+      ],
+      "name": "Sample - ZeroFox - 1.0.0",
+      "description": "",
+      "visible": true,
+      "recordTags": [
+        "Zerofox",
+        "zerofox"
+      ]
+    }
+  ]
+}

@@ -2,11 +2,11 @@
   "name": "zerofox",
   "version": "1.0.0",
   "label": "ZeroFox",
-  "description": "",
+  "description": "ZeroFox Platform combines advanced AI-driven analysis to detect complex threats on the surface, deep and dark web, fully managed services with threat analysts that become an extension of your team, and automated remediation to effectively disrupt threats.",
   "publisher": "Fortinet",
   "cs_approved": false,
   "cs_compatible": true,
-  "help_online": "ZeroFox Platform combines advanced AI-driven analysis to detect complex threats on the surface, deep and dark web, fully managed services with threat analysts that become an extension of your team, and automated remediation to effectively disrupt threats.",
+  "help_online": "",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "category": "Threat Intelligence",
@@ -123,7 +123,7 @@
     {
       "operation": "get_filehash_lookup",
       "title": "Get FileHash Lookup",
-      "description": "Retrieves a report from ZeroFox for the hash submitted to determine if it is suspicious based on the domain name you have specified.",
+      "description": "Retrieves a report from ZeroFox for the hash submitted to determine if it is suspicious based on the hash you have specified.",
       "category": "investigation",
       "annotation": "get_filehash_lookup",
       "enabled": true,
@@ -144,7 +144,7 @@
     {
       "operation": "get_exploits_lookup",
       "title": "Get Exploits Lookup",
-      "description": "Retrieves a report from ZeroFox based on the created after you have specified.",
+      "description": "Retrieves a registered exploits from ZeroFox based on the created after you have specified.",
       "category": "investigation",
       "annotation": "get_exploits_lookup",
       "enabled": true,
@@ -229,12 +229,12 @@
         },
         {
           "title": "Term ID of Entity",
-          "description": "Specify the ID of the term entity based on which you want to retrieve alerts from ZeroFox.",
+          "description": "Specify the term ID of the entity based on which you want to retrieve alerts from ZeroFox",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Specify the ID of the term entity based on which you want to retrieve alerts from ZeroFox.",
+          "tooltip": "Specify the term ID of the entity based on which you want to retrieve alerts from ZeroFox",
           "name": "entity_term"
         },
         {
@@ -296,12 +296,12 @@
         },
         {
           "title": "Sort Direction",
-          "description": "Select the sort direction based on which you want to retrieve alerts from ZeroFox. Possible values are Ascending or Descending",
+          "description": "Select the sort direction to sort alerts retrieved from ZeroFox. Possible values are Ascending or Descending",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "select",
-          "tooltip": "Select the sort direction based on which you want to retrieve alerts from ZeroFox. Possible values are Ascending or Descending",
+          "tooltip": "Select the sort direction to sort alerts retrieved from ZeroFox. Possible values are Ascending or Descending",
           "name": "sort_direction",
           "options": [
             "Ascending",
@@ -310,12 +310,12 @@
         },
         {
           "title": "Sort Field",
-          "description": "Select the sort field based on which you want to retrieve alerts from ZeroFox. Possible values are Alert ID, Alert Status, Alert Type, Assigned User, etc.",
+          "description": "Select the sort field based on which you want to sort alerts from ZeroFox. Possible values are Alert ID, Alert Status, Alert Type, Assigned User, etc.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "select",
-          "tooltip": "Select the sort field based on which you want to retrieve alerts from ZeroFox. Possible values are Alert ID, Alert Status, Alert Type, Assigned User, etc.",
+          "tooltip": "Select the sort field based on which you want to sort alerts from ZeroFox. Possible values are Alert ID, Alert Status, Alert Type, Assigned User, etc.",
           "name": "sort_field",
           "options": [
             "Alert ID",
@@ -491,7 +491,7 @@
     },
     {
       "operation": "alert_request_takedown",
-      "title": "Alert Request Takedown",
+      "title": "Request Alert Takedown",
       "description": "Requests a takedown of a specified alert in ZeroFox based on the alert ID you have specified.",
       "category": "investigation",
       "annotation": "alert_request_takedown",
@@ -512,7 +512,7 @@
     },
     {
       "operation": "alert_cancel_takedown",
-      "title": "Alert Cancel Takedown",
+      "title": "Cancel Alert Takedown",
       "description": "Cancels a takedown of a specified alert in ZeroFox based on the alert ID you have specified.",
       "category": "investigation",
       "annotation": "alert_cancel_takedown",

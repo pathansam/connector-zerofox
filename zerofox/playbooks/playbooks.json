@@ -330,7 +330,7 @@
             }
           ],
           "triggerLimit": null,
-          "description": "Retrieves a report from ZeroFox based on the created after you have specified.",
+          "description": "Retrieves a registered exploits from ZeroFox based on the created after you have specified.",
           "name": "Get Exploits Lookup",
           "tag": "#ZeroFox",
           "recordTags": [
@@ -747,7 +747,7 @@
             {
               "uuid": "9f664411-a76c-4cd8-8d77-8d42d2b59038",
               "@type": "WorkflowStep",
-              "name": "Alert Request Takedown",
+              "name": "Request Alert Takedown",
               "description": null,
               "status": null,
               "arguments": {
@@ -759,7 +759,7 @@
                 "version": "1.0.0",
                 "connector": "zerofox",
                 "operation": "alert_request_takedown",
-                "operationTitle": "Alert Request Takedown"
+                "operationTitle": "Request Alert Takedown"
               },
               "left": "188",
               "top": "120",
@@ -768,7 +768,7 @@
           ],
           "triggerLimit": null,
           "description": "Requests a takedown of a specified alert in ZeroFox based on the alert ID you have specified.",
-          "name": "Alert Request Takedown",
+          "name": "Request Alert Takedown",
           "tag": "#ZeroFox",
           "recordTags": [
             "Zerofox",
@@ -786,7 +786,7 @@
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
-              "name": "Start-> Alert Request Takedown",
+              "name": "Start-> Request Alert Takedown",
               "sourceStep": "/api/3/workflow_steps/1db824a2-8267-4359-a1c8-7b17f5e22919",
               "targetStep": "/api/3/workflow_steps/9f664411-a76c-4cd8-8d77-8d42d2b59038"
             }
@@ -817,7 +817,7 @@
             {
               "uuid": "89aa89ec-8b00-47f6-a365-ff51d5ba308a",
               "@type": "WorkflowStep",
-              "name": "Alert Cancel Takedown",
+              "name": "Cancel Alert Takedown",
               "description": null,
               "status": null,
               "arguments": {
@@ -829,7 +829,7 @@
                 "version": "1.0.0",
                 "connector": "zerofox",
                 "operation": "alert_cancel_takedown",
-                "operationTitle": "Alert Cancel Takedown"
+                "operationTitle": "Cancel Alert Takedown"
               },
               "left": "188",
               "top": "120",
@@ -838,7 +838,7 @@
           ],
           "triggerLimit": null,
           "description": "Cancels a takedown of a specified alert in ZeroFox based on the alert ID you have specified.",
-          "name": "Alert Cancel Takedown",
+          "name": "Cancel Alert Takedown",
           "tag": "#ZeroFox",
           "recordTags": [
             "Zerofox",
@@ -856,7 +856,7 @@
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
-              "name": "Start-> Alert Cancel Takedown",
+              "name": "Start-> Cancel Alert Takedown",
               "sourceStep": "/api/3/workflow_steps/0f903454-b871-4067-9b59-59dade3e78e6",
               "targetStep": "/api/3/workflow_steps/89aa89ec-8b00-47f6-a365-ff51d5ba308a"
             }

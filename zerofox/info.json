@@ -1,0 +1,866 @@
+{
+  "name": "zerofox",
+  "version": "1.0.0",
+  "label": "ZeroFox",
+  "description": "ZeroFox Platform combines advanced AI-driven analysis to detect complex threats on the surface, deep and dark web, fully managed services with threat analysts that become an extension of your team, and automated remediation to effectively disrupt threats.",
+  "publisher": "Fortinet",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "help_online": "",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "category": "Threat Intelligence",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "description": "Specify the URL of the ZeroFox server to connect and perform automated operations.",
+        "type": "text",
+        "name": "server_url",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "value": "https://api.zerofox.com",
+        "tooltip": "Specify the URL of the ZeroFox server to connect and perform automated operations."
+      },
+      {
+        "title": "Username",
+        "description": "Specify the username to access the ZeroFox server to connect and perform automated operations.",
+        "type": "text",
+        "name": "username",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "tooltip": "Specify the username to access the ZeroFox server to connect and perform automated operations."
+      },
+      {
+        "title": "Password",
+        "description": "Specify the password to access the ZeroFox server to connect and perform automated operations.",
+        "type": "password",
+        "name": "password",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "tooltip": "Specify the password to access the ZeroFox server to connect and perform automated operations."
+      },
+      {
+        "title": "Verify SSL",
+        "description": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set to True.",
+        "name": "verify_ssl",
+        "type": "checkbox",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true,
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set to True."
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "get_ip_lookup",
+      "title": "Get IP Lookup",
+      "description": "Retrieves a report from ZeroFox for the IP address submitted to determine if it is malicious based on the IP address you have specified.",
+      "category": "investigation",
+      "annotation": "get_ip_lookup",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "IP Address",
+          "description": "Specify the IP address based on which you want to retrieve details from ZeroFox.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the IP address based on which you want to retrieve details from ZeroFox.",
+          "name": "ip"
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "get_domain_lookup",
+      "title": "Get Domain Lookup",
+      "description": "Retrieves a report from ZeroFox for the domain submitted to determine if it is suspicious based on the domain name you have specified.",
+      "category": "investigation",
+      "annotation": "get_domain_lookup",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Domain Name",
+          "description": "Specify the domain based on which you want to retrieve details from ZeroFox.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the domain based on which you want to retrieve details from ZeroFox.",
+          "name": "domain"
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "get_email_lookup",
+      "title": "Get Email Lookup",
+      "description": "Retrieves a report from ZeroFox for the email address submitted to determine if it is suspicious based on the email address you have specified.",
+      "category": "investigation",
+      "annotation": "get_email_lookup",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Email Address",
+          "description": "Specify the email address based on which you want to retrieve details from ZeroFox.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the email address based on which you want to retrieve details from ZeroFox.",
+          "name": "email"
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "get_filehash_lookup",
+      "title": "Get FileHash Lookup",
+      "description": "Retrieves a report from ZeroFox for the hash submitted to determine if it is suspicious based on the hash you have specified.",
+      "category": "investigation",
+      "annotation": "get_filehash_lookup",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "File Hash",
+          "description": "Specify the value of the file hash based on which you want to retrieve details from ZeroFox.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the value of the file hash based on which you want to retrieve details from ZeroFox.",
+          "name": "hash"
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "get_exploits_lookup",
+      "title": "Get Exploits Lookup",
+      "description": "Retrieves a registered exploits from ZeroFox based on the created after you have specified.",
+      "category": "investigation",
+      "annotation": "get_exploits_lookup",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Created After",
+          "description": "Select the DateTime using which you want to filter the result set to only include only those items that have been created after the specified timestamp.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "tooltip": "Select the DateTime using which you want to filter the result set to only include only those items that have been created after the specified timestamp.",
+          "name": "created_after"
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "get_alerts_list",
+      "title": "Get Alerts List",
+      "description": "Retrieves a list of all alerts from ZeroFox based on the input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "get_alerts_list",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Account Number",
+          "description": "Specify the account number of the social network based on which you want to retrieve alerts from ZeroFox.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the account number of the social network based on which you want to retrieve alerts from ZeroFox.",
+          "name": "account"
+        },
+        {
+          "title": "Alert Type",
+          "description": "Select the type of the alert based on which you want to retrieve alerts from ZeroFox. Possible values are Account Information, Entity Discovery Content, Entity Discovery Profile, Impersonating Account, etc.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "tooltip": "Select the type of the alert based on which you want to retrieve alerts from ZeroFox. Possible values are Account Information, Entity Discovery Content, Entity Discovery Profile, Impersonating Account, etc.",
+          "name": "alert_type",
+          "options": [
+            "Account Information",
+            "Entity Discovery Content",
+            "Entity Discovery Profile",
+            "Impersonating Account",
+            "Impersonating Comment",
+            "Impersonating Post",
+            "Incoming Comment",
+            "Incoming Post",
+            "Incoming Private Message",
+            "Outgoing Private Message",
+            "Self Comment",
+            "Self Post",
+            "Search Query",
+            "Location",
+            "Email"
+          ]
+        },
+        {
+          "title": "Assignee Name",
+          "description": "Specify the name of the user assigned to an alert based on which you want to retrieve alerts from ZeroFox.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the name of the user assigned to an alert based on which you want to retrieve alerts from ZeroFox.",
+          "name": "assignee"
+        },
+        {
+          "title": "Entity ID",
+          "description": "Specify the ID of the entity based on which you want to retrieve alerts from ZeroFox.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the ID of the entity based on which you want to retrieve alerts from ZeroFox.",
+          "name": "entity"
+        },
+        {
+          "title": "Term ID of Entity",
+          "description": "Specify the term ID of the entity based on which you want to retrieve alerts from ZeroFox",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the term ID of the entity based on which you want to retrieve alerts from ZeroFox",
+          "name": "entity_term"
+        },
+        {
+          "title": "Created After",
+          "description": "Select the DateTime using which you want to filter the result set to only include only those items that have been created after the specified timestamp.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "tooltip": "Select the DateTime using which you want to filter the result set to only include only those items that have been created after the specified timestamp.",
+          "name": "min_timestamp"
+        },
+        {
+          "title": "Created Before",
+          "description": "Select the DateTime using which you want to filter the result set to only include only those items that have been created before the specified timestamp.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "tooltip": "Select the DateTime using which you want to filter the result set to only include only those items that have been created before the specified timestamp.",
+          "name": "max_timestamp"
+        },
+        {
+          "title": "Last Modified",
+          "description": "Specify the amount of time (in seconds) since an alert was last modified based on which you want to retrieve alerts from ZeroFox.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "tooltip": "Specify the amount of time (in seconds) since an alert was last modified based on which you want to retrieve alerts from ZeroFox.",
+          "name": "last_modified"
+        },
+        {
+          "title": "Network Names",
+          "description": "Specify the names of the network based on which you want to retrieve alerts from ZeroFox.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the names of the network based on which you want to retrieve alerts from ZeroFox.",
+          "name": "network"
+        },
+        {
+          "title": "Risk Rating",
+          "description": "Select the risk rating of the alert based on which you want to retrieve alerts from ZeroFox. Possible values are Info, Low, Medium, High, or Critical",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "tooltip": "Select the risk rating of the alert based on which you want to retrieve alerts from ZeroFox. Possible values are Info, Low, Medium, High, or Critical",
+          "name": "risk_rating",
+          "options": [
+            "Info",
+            "Low",
+            "Medium",
+            "High",
+            "Critical"
+          ]
+        },
+        {
+          "title": "Sort Direction",
+          "description": "Select the sort direction to sort alerts retrieved from ZeroFox. Possible values are Ascending or Descending",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "tooltip": "Select the sort direction to sort alerts retrieved from ZeroFox. Possible values are Ascending or Descending",
+          "name": "sort_direction",
+          "options": [
+            "Ascending",
+            "Descending"
+          ]
+        },
+        {
+          "title": "Sort Field",
+          "description": "Select the sort field based on which you want to sort alerts from ZeroFox. Possible values are Alert ID, Alert Status, Alert Type, Assigned User, etc.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "tooltip": "Select the sort field based on which you want to sort alerts from ZeroFox. Possible values are Alert ID, Alert Status, Alert Type, Assigned User, etc.",
+          "name": "sort_field",
+          "options": [
+            "Alert ID",
+            "Alert Status",
+            "Alert Type",
+            "Assigned User",
+            "Perpetrator",
+            "Protected Entity",
+            "Protected Social Object",
+            "Rule",
+            "Severity",
+            "Social Network",
+            "Timestamp",
+            "Escalated"
+          ]
+        },
+        {
+          "title": "Alert Status",
+          "description": "Select the status of the alert based on which you want to retrieve alerts from ZeroFox. Possible values are Open, Closed, Takedown Accepted, Takedown Denied, Takedown Requested, or White Listed",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "tooltip": "Select the status of the alert based on which you want to retrieve alerts from ZeroFox. Possible values are Open, Closed, Takedown Accepted, Takedown Denied, Takedown Requested, or White Listed",
+          "name": "status",
+          "options": [
+            "Open",
+            "Closed",
+            "Takedown Accepted",
+            "Takedown Denied",
+            "Takedown Requested",
+            "White Listed"
+          ]
+        },
+        {
+          "title": "Escalated",
+          "description": "If true, returns only escalated alerts from ZeroFox. By default, it set as True.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "checkbox",
+          "tooltip": "If true, returns only escalated alerts from ZeroFox. By default, it set as True.",
+          "name": "escalated",
+          "value": true
+        },
+        {
+          "title": "Limit",
+          "description": "Specify the maximum count of records that you want this operation to fetch from ZeroFox. By default, this option is set to 10, and you can set a maximum value of 100.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "tooltip": "Specify the maximum count of records that you want this operation to fetch from ZeroFox.By default, this option is set to 10, and you can set a maximum value of 100.",
+          "name": "limit",
+          "value": 10
+        },
+        {
+          "title": "Offset",
+          "description": "Index of the first item to be returned by this operation. This parameter is useful for pagination and for getting a subset of items. By default, this is set as 0",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "tooltip": "Index of the first item to be returned by this operation. This parameter is useful for pagination and for getting a subset of items. By default, this is set as 0",
+          "name": "offset"
+        },
+        {
+          "title": "Additional Fields",
+          "name": "additional_fields",
+          "type": "json",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "tooltip": "Additional fields, in the JSON format, based on which you want to retrieve a alerts from ZeroFox.",
+          "description": "Additional fields, in the JSON format, based on which you want to retrieve a alerts from ZeroFox."
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "get_alert_details",
+      "title": "Get Alert Details",
+      "description": "Retrieves a specific alert details from ZeroFox based on the alert ID you have specified.",
+      "category": "investigation",
+      "annotation": "get_alert_details",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Alert ID",
+          "description": "Specify the ID of the alert based on which you want to retrieve details from ZeroFox.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the ID of the alert based on which you want to retrieve details from ZeroFox.",
+          "name": "alert_id"
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "assign_alert_to_user",
+      "title": "Assign Alert to User",
+      "description": "Assigns a alert to a specific user in ZeroFox based on the alert ID and user name you have specified.",
+      "category": "investigation",
+      "annotation": "assign_alert_to_user",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Alert ID",
+          "description": "Specify the ID of the alert based on which you want to assign alert to specific user in ZeroFox.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the ID of the alert based on which you want to assign alert to specific user in ZeroFox.",
+          "name": "alert_id"
+        },
+        {
+          "title": "User Name",
+          "description": "Specify the name of the user based on which you want to assign alert in ZeroFox.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the name of the user based on which you want to assign alert in ZeroFox.",
+          "name": "username"
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "open_alert",
+      "title": "Open Alert",
+      "description": "Opens an specific alert in ZeroFox based on the alert ID you have specified.",
+      "category": "investigation",
+      "annotation": "open_alert",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Alert ID",
+          "description": "Specify the ID of the alert based on which you want to open specific alert in ZeroFox.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the ID of the alert based on which you want to open specific alert in ZeroFox.",
+          "name": "alert_id"
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "close_alert",
+      "title": "Close Alert",
+      "description": "Closed an specific alert in ZeroFox based on the alert ID you have specified.",
+      "category": "investigation",
+      "annotation": "close_alert",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Alert ID",
+          "description": "Specify the ID of the alert based on which you want to close specific alert in ZeroFox.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the ID of the alert based on which you want to close specific alert in ZeroFox.",
+          "name": "alert_id"
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "alert_request_takedown",
+      "title": "Request Alert Takedown",
+      "description": "Requests a takedown of a specified alert in ZeroFox based on the alert ID you have specified.",
+      "category": "investigation",
+      "annotation": "alert_request_takedown",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Alert ID",
+          "description": "Specify the ID of the alert based on which you want to takedown alert request in ZeroFox.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the ID of the alert based on which you want to takedown alert request in ZeroFox.",
+          "name": "alert_id"
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "alert_cancel_takedown",
+      "title": "Cancel Alert Takedown",
+      "description": "Cancels a takedown of a specified alert in ZeroFox based on the alert ID you have specified.",
+      "category": "investigation",
+      "annotation": "alert_cancel_takedown",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Alert ID",
+          "description": "Specify the ID of the alert based on which you want to cancel alert takedown in ZeroFox.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the ID of the alert based on which you want to cancel alert takedown in ZeroFox.",
+          "name": "alert_id"
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "modify_alert_tags",
+      "title": "Modify Alert Tags",
+      "description": "Adds tags to and or removes tags from a specified alert in ZeroFox based on the alert ID, action, and tags you have specified.",
+      "category": "investigation",
+      "annotation": "modify_alert_tags",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Alert ID",
+          "description": "Specify the ID of the alert based on which you want to modify the alert tags in ZeroFox.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the ID of the alert based on which you want to modify the alert tags in ZeroFox.",
+          "name": "alert_id"
+        },
+        {
+          "title": "Action",
+          "description": "Specify the action based on which you want to add or remove the alert tags in ZeroFox.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "tooltip": "Specify the action based on which you want to add or remove the alert tags in ZeroFox.",
+          "name": "action",
+          "options": [
+            "Add",
+            "Remove"
+          ]
+        },
+        {
+          "title": "Tags",
+          "description": "Specify the tags based on which you want to modify in ZeroFox.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the tags based on which you want to modify in ZeroFox.",
+          "name": "tags_list"
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "modify_alert_notes",
+      "title": "Modify Alert Notes",
+      "description": "Modify the notes from a specified alert in ZeroFox based on the alert ID and notes you have specified.",
+      "category": "investigation",
+      "annotation": "modify_alert_notes",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Alert ID",
+          "description": "Specify the ID of the alert based on which you want to modify the alert notes in ZeroFox.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the ID of the alert based on which you want to modify the alert notes in ZeroFox.",
+          "name": "alert_id"
+        },
+        {
+          "title": "Notes",
+          "description": "Specify the notes based on which you want to modify in ZeroFox.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the notes based on which you want to modify in ZeroFox.",
+          "name": "notes"
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "create_entity",
+      "title": "Create Entity",
+      "description": "Creates a new entity associated with the company of the authorized user in ZeroFox based on the entity name and other input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "create_entity",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Entity Name",
+          "description": "Specify the entity name based on which you want to create entity in ZeroFox.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the entity name based on which you want to create entity in ZeroFox.",
+          "name": "name"
+        },
+        {
+          "title": "Policy ID",
+          "description": "Specify the ID of the policy based on which you want to create entity in ZeroFox.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the ID of the policy based on which you want to create entity in ZeroFox.",
+          "name": "policy"
+        },
+        {
+          "title": "Strict Name Matching",
+          "description": "Select the type of string matching used for comparing entity names to impersonator names.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "checkbox",
+          "tooltip": "Select the type of string matching used for comparing entity names to impersonator names.",
+          "name": "strict_name_matching"
+        },
+        {
+          "title": "Tags",
+          "description": "Specify the comma-separated list of string tags based on which you want to create entity in ZeroFox.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the comma-separated list of string tags based on which you want to create entity in ZeroFox.",
+          "name": "tags",
+          "placeholder": "For eg. tag1,tag2,tag3, etc."
+        },
+        {
+          "title": "Organization Name",
+          "description": "Specify the name of the organization associated with the entity based on which you want to create entity in ZeroFox.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the name of the organization associated with the entity based on which you want to create entity in ZeroFox.",
+          "name": "organization"
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "get_entity_list",
+      "title": "Get Entity List",
+      "description": "Retrieves a list of all entities associated with the company of the authorized user from ZeroFox based on the input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "get_entity_list",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Email Address",
+          "description": "Specify the email address based on which you want to retrieve entity from ZeroFox.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the email address based on which you want to retrieve entity from ZeroFox.",
+          "name": "email_address"
+        },
+        {
+          "title": "Group ID",
+          "description": "Specify the ID of the entity group based on which you want to retrieve entity from ZeroFox.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the ID of the entity group based on which you want to retrieve entity from ZeroFox.",
+          "name": "group"
+        },
+        {
+          "title": "Label ID",
+          "description": "Specify the ID of the entity label based on which you want to retrieve entity from ZeroFox.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the ID of the entity label based on which you want to retrieve entity from ZeroFox.",
+          "name": "label"
+        },
+        {
+          "title": "Network ID",
+          "description": "Specify the ID of the network based on which you want to retrieve entity from ZeroFox.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the ID of the network based on which you want to retrieve entity from ZeroFox.",
+          "name": "network"
+        },
+        {
+          "title": "Network Name",
+          "description": "Specify the name of the network based on which you want to retrieve entity from ZeroFox.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the name of the network based on which you want to retrieve entity from ZeroFox.",
+          "name": "networks"
+        },
+        {
+          "title": "Policy ID",
+          "description": "Specify the ID of the entity policy based on which you want to retrieve entity from ZeroFox.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the ID of the entity policy based on which you want to retrieve entity from ZeroFox.",
+          "name": "policy"
+        },
+        {
+          "title": "Type ID",
+          "description": "Specify the ID of the entity type based on which you want to retrieve entity from ZeroFox.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the ID of the entity type based on which you want to retrieve entity from ZeroFox.",
+          "name": "type"
+        },
+        {
+          "title": "Page Number",
+          "description": "Specify the page from which you want this operation to return results based on the page size.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the page from which you want this operation to return results based on the page size.",
+          "name": "page"
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "get_entity_types",
+      "title": "Get Entity Types List",
+      "description": "Retrieves the list of all entity types from ZeroFox.",
+      "category": "investigation",
+      "annotation": "get_entity_types",
+      "enabled": true,
+      "parameters": [],
+      "output_schema": {}
+    },
+    {
+      "operation": "get_policy_types",
+      "title": "Get Policy Types List",
+      "description": "Retrieves the list of all policy types from ZeroFox.",
+      "category": "investigation",
+      "annotation": "get_policy_types",
+      "enabled": true,
+      "parameters": [],
+      "output_schema": {}
+    },
+    {
+      "operation": "submit_threat",
+      "title": "Submit Threat",
+      "description": "Submit threats into the alert registry for disruption in ZeroFox based on the entity ID, content, content type, infringement type, and notes you have specified.",
+      "category": "investigation",
+      "annotation": "submit_threat",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Entity ID",
+          "description": "Specify the ID of the entity based on which you want to submit threat in ZeroFox.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the ID of the entity based on which you want to submit threat in ZeroFox.",
+          "name": "entity_id"
+        },
+        {
+          "title": "Content",
+          "description": "Specify the content to be considered a threat based on which you want to submit threat in ZeroFox.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the content to be considered a threat based on which you want to submit threat in ZeroFox.",
+          "name": "source"
+        },
+        {
+          "title": "Content Type",
+          "description": "Specify the type of the content acting as a threat based on which you want to submit threat in ZeroFox. Possible values are Email, IP, Domain, URL, etc.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "tooltip": "Specify the type of the content acting as a threat based on which you want to submit threat in ZeroFox. Possible values are Email, IP, Domain, URL, etc.",
+          "name": "alert_type",
+          "options": [
+            "Email",
+            "IP",
+            "Domain",
+            "URL",
+            "Phone",
+            "Mail Exchange",
+            "Page Content",
+            "Account"
+          ]
+        },
+        {
+          "title": "Infringement Type",
+          "description": "Specify the type of the infringement the submitted threat represents based on which you want to submit threat in ZeroFox. Possible values are Phishing, Malware, Rogue App, Impersonation, etc.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "tooltip": "Specify the type of the infringement the submitted threat represents based on which you want to submit threat in ZeroFox. Possible values are Phishing, Malware, Rogue App, Impersonation, etc.",
+          "name": "violation",
+          "options": [
+            "Phishing",
+            "Malware",
+            "Rogue App",
+            "Impersonation",
+            "Trademark",
+            "Copyright",
+            "Private Data",
+            "Fraud",
+            "Other"
+          ]
+        },
+        {
+          "title": "Notes",
+          "description": "Specify the notes to include in submission based on which you want to submit threat in ZeroFox.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "tooltip": "Specify the notes to include in submission based on which you want to submit threat in ZeroFox.",
+          "name": "notes"
+        }
+      ],
+      "output_schema": {}
+    }
+  ]
+}

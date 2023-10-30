@@ -6,7 +6,7 @@
   "publisher": "Fortinet",
   "cs_approved": false,
   "cs_compatible": true,
-  "help_online": "",
+  "help_online": "https://github.com/fortinet-fortisoar/connector-zerofox/blob/release/1.0.0/docs/ZeroFoxDoc.md",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "category": "Threat Intelligence",

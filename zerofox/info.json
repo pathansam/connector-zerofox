@@ -6,7 +6,7 @@
   "publisher": "Fortinet",
   "cs_approved": false,
   "cs_compatible": true,
-  "help_online": "",
+  "help_online": "https://github.com/fortinet-fortisoar/connector-zerofox/blob/release/1.0.0/docs/ZeroFoxDoc.md",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "category": "Threat Intelligence",
@@ -60,7 +60,7 @@
     {
       "operation": "get_ip_lookup",
       "title": "Get IP Lookup",
-      "description": "Retrieves a report from ZeroFox for the IP address submitted to determine if it is malicious based on the IP address you have specified.",
+      "description": "Retrieves a report from ZeroFox for the IP address submitted to determine if it is malicious or not.",
       "category": "investigation",
       "annotation": "get_ip_lookup",
       "enabled": true,
@@ -81,7 +81,7 @@
     {
       "operation": "get_domain_lookup",
       "title": "Get Domain Lookup",
-      "description": "Retrieves a report from ZeroFox for the domain submitted to determine if it is suspicious based on the domain name you have specified.",
+      "description": "Retrieves a report from ZeroFox for the domain submitted to determine if it is suspicious or not.",
       "category": "investigation",
       "annotation": "get_domain_lookup",
       "enabled": true,
@@ -102,7 +102,7 @@
     {
       "operation": "get_email_lookup",
       "title": "Get Email Lookup",
-      "description": "Retrieves a report from ZeroFox for the email address submitted to determine if it is suspicious based on the email address you have specified.",
+      "description": "Retrieves a report from ZeroFox for the email address submitted to determine if it is suspicious or not.",
       "category": "investigation",
       "annotation": "get_email_lookup",
       "enabled": true,
@@ -123,7 +123,7 @@
     {
       "operation": "get_filehash_lookup",
       "title": "Get FileHash Lookup",
-      "description": "Retrieves a report from ZeroFox for the hash submitted to determine if it is suspicious based on the hash you have specified.",
+      "description": "Retrieves a report from ZeroFox for the hash submitted to determine if it is suspicious or not.",
       "category": "investigation",
       "annotation": "get_filehash_lookup",
       "enabled": true,
@@ -229,12 +229,12 @@
         },
         {
           "title": "Term ID of Entity",
-          "description": "Specify the term ID of the entity based on which you want to retrieve alerts from ZeroFox",
+          "description": "Specify the term ID of the entity based on which you want to retrieve alerts from ZeroFox.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Specify the term ID of the entity based on which you want to retrieve alerts from ZeroFox",
+          "tooltip": "Specify the term ID of the entity based on which you want to retrieve alerts from ZeroFox.",
           "name": "entity_term"
         },
         {
@@ -279,12 +279,12 @@
         },
         {
           "title": "Risk Rating",
-          "description": "Select the risk rating of the alert based on which you want to retrieve alerts from ZeroFox. Possible values are Info, Low, Medium, High, or Critical",
+          "description": "Select the risk rating of the alert based on which you want to retrieve alerts from ZeroFox. Possible values are Info, Low, Medium, High, or Critical.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "select",
-          "tooltip": "Select the risk rating of the alert based on which you want to retrieve alerts from ZeroFox. Possible values are Info, Low, Medium, High, or Critical",
+          "tooltip": "Select the risk rating of the alert based on which you want to retrieve alerts from ZeroFox. Possible values are Info, Low, Medium, High, or Critical.",
           "name": "risk_rating",
           "options": [
             "Info",
@@ -296,12 +296,12 @@
         },
         {
           "title": "Sort Direction",
-          "description": "Select the sort direction to sort alerts retrieved from ZeroFox. Possible values are Ascending or Descending",
+          "description": "Select the sort direction to sort alerts retrieved from ZeroFox. Possible values are Ascending or Descending.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "select",
-          "tooltip": "Select the sort direction to sort alerts retrieved from ZeroFox. Possible values are Ascending or Descending",
+          "tooltip": "Select the sort direction to sort alerts retrieved from ZeroFox. Possible values are Ascending or Descending.",
           "name": "sort_direction",
           "options": [
             "Ascending",
@@ -334,12 +334,12 @@
         },
         {
           "title": "Alert Status",
-          "description": "Select the status of the alert based on which you want to retrieve alerts from ZeroFox. Possible values are Open, Closed, Takedown Accepted, Takedown Denied, Takedown Requested, or White Listed",
+          "description": "Select the status of the alert based on which you want to retrieve alerts from ZeroFox. Possible values are Open, Closed, Takedown Accepted, Takedown Denied, Takedown Requested, or White Listed.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "select",
-          "tooltip": "Select the status of the alert based on which you want to retrieve alerts from ZeroFox. Possible values are Open, Closed, Takedown Accepted, Takedown Denied, Takedown Requested, or White Listed",
+          "tooltip": "Select the status of the alert based on which you want to retrieve alerts from ZeroFox. Possible values are Open, Closed, Takedown Accepted, Takedown Denied, Takedown Requested, or White Listed.",
           "name": "status",
           "options": [
             "Open",
@@ -374,12 +374,12 @@
         },
         {
           "title": "Offset",
-          "description": "Index of the first item to be returned by this operation. This parameter is useful for pagination and for getting a subset of items. By default, this is set as 0",
+          "description": "Index of the first item to be returned by this operation. This parameter is useful for pagination and for getting a subset of items. By default, this is set as 0.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "integer",
-          "tooltip": "Index of the first item to be returned by this operation. This parameter is useful for pagination and for getting a subset of items. By default, this is set as 0",
+          "tooltip": "Index of the first item to be returned by this operation. This parameter is useful for pagination and for getting a subset of items. By default, this is set as 0.",
           "name": "offset"
         },
         {
@@ -398,7 +398,7 @@
     {
       "operation": "get_alert_details",
       "title": "Get Alert Details",
-      "description": "Retrieves a specific alert details from ZeroFox based on the alert ID you have specified.",
+      "description": "Retrieves a specific alert details from ZeroFox.",
       "category": "investigation",
       "annotation": "get_alert_details",
       "enabled": true,
@@ -419,29 +419,29 @@
     {
       "operation": "assign_alert_to_user",
       "title": "Assign Alert to User",
-      "description": "Assigns a alert to a specific user in ZeroFox based on the alert ID and user name you have specified.",
+      "description": "Assigns a alert ID to a specific user in ZeroFox.",
       "category": "investigation",
       "annotation": "assign_alert_to_user",
       "enabled": true,
       "parameters": [
         {
           "title": "Alert ID",
-          "description": "Specify the ID of the alert based on which you want to assign alert to specific user in ZeroFox.",
+          "description": "Specify the ID of the alert which you want to assign to specific user in ZeroFox.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Specify the ID of the alert based on which you want to assign alert to specific user in ZeroFox.",
+          "tooltip": "Specify the ID of the alert which you want to assign to specific user in ZeroFox.",
           "name": "alert_id"
         },
         {
           "title": "User Name",
-          "description": "Specify the name of the user based on which you want to assign alert in ZeroFox.",
+          "description": "Specify the name of the user which you want to assign to the alert in ZeroFox.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Specify the name of the user based on which you want to assign alert in ZeroFox.",
+          "tooltip": "Specify the name of the user which you want to assign to the alert in ZeroFox.",
           "name": "username"
         }
       ],
@@ -450,19 +450,19 @@
     {
       "operation": "open_alert",
       "title": "Open Alert",
-      "description": "Opens an specific alert in ZeroFox based on the alert ID you have specified.",
+      "description": "Opens an specific alert in ZeroFox.",
       "category": "investigation",
       "annotation": "open_alert",
       "enabled": true,
       "parameters": [
         {
           "title": "Alert ID",
-          "description": "Specify the ID of the alert based on which you want to open specific alert in ZeroFox.",
+          "description": "Specify the ID of the alert which you want to open in ZeroFox.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Specify the ID of the alert based on which you want to open specific alert in ZeroFox.",
+          "tooltip": "Specify the ID of the alert which you want to open in ZeroFox.",
           "name": "alert_id"
         }
       ],
@@ -471,19 +471,19 @@
     {
       "operation": "close_alert",
       "title": "Close Alert",
-      "description": "Closed an specific alert in ZeroFox based on the alert ID you have specified.",
+      "description": "Closed an specific alert in ZeroFox.",
       "category": "investigation",
       "annotation": "close_alert",
       "enabled": true,
       "parameters": [
         {
           "title": "Alert ID",
-          "description": "Specify the ID of the alert based on which you want to close specific alert in ZeroFox.",
+          "description": "Specify the ID of the alert which you want to close in ZeroFox.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Specify the ID of the alert based on which you want to close specific alert in ZeroFox.",
+          "tooltip": "Specify the ID of the alert which you want to close in ZeroFox.",
           "name": "alert_id"
         }
       ],
@@ -492,19 +492,19 @@
     {
       "operation": "alert_request_takedown",
       "title": "Request Alert Takedown",
-      "description": "Requests a takedown of a specified alert in ZeroFox based on the alert ID you have specified.",
+      "description": "Requests a takedown for specified alert ID in ZeroFox.",
       "category": "investigation",
       "annotation": "alert_request_takedown",
       "enabled": true,
       "parameters": [
         {
           "title": "Alert ID",
-          "description": "Specify the ID of the alert based on which you want to takedown alert request in ZeroFox.",
+          "description": "Specify the alert ID for which you want to request a takedown.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Specify the ID of the alert based on which you want to takedown alert request in ZeroFox.",
+          "tooltip": "Specify the alert ID for which you want to request a takedown.",
           "name": "alert_id"
         }
       ],
@@ -513,19 +513,19 @@
     {
       "operation": "alert_cancel_takedown",
       "title": "Cancel Alert Takedown",
-      "description": "Cancels a takedown of a specified alert in ZeroFox based on the alert ID you have specified.",
+      "description": "Cancels a takedown for specified alert ID in ZeroFox.",
       "category": "investigation",
       "annotation": "alert_cancel_takedown",
       "enabled": true,
       "parameters": [
         {
           "title": "Alert ID",
-          "description": "Specify the ID of the alert based on which you want to cancel alert takedown in ZeroFox.",
+          "description": "Specify the alert ID for which you want to cancel a takedown.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Specify the ID of the alert based on which you want to cancel alert takedown in ZeroFox.",
+          "tooltip": "Specify the alert ID for which you want to cancel a takedown.",
           "name": "alert_id"
         }
       ],
@@ -551,12 +551,12 @@
         },
         {
           "title": "Action",
-          "description": "Specify the action based on which you want to add or remove the alert tags in ZeroFox.",
+          "description": "Select one of the action based on which you want to add or remove the alert tags in ZeroFox.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "select",
-          "tooltip": "Specify the action based on which you want to add or remove the alert tags in ZeroFox.",
+          "tooltip": "Select one of the action based on which you want to add or remove the alert tags in ZeroFox.",
           "name": "action",
           "options": [
             "Add",
@@ -565,12 +565,12 @@
         },
         {
           "title": "Tags",
-          "description": "Specify the tags based on which you want to modify in ZeroFox.",
+          "description": "Specify the tags which you want to modify in ZeroFox.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Specify the tags based on which you want to modify in ZeroFox.",
+          "tooltip": "Specify the tags which you want to modify in ZeroFox.",
           "name": "tags_list"
         }
       ],
@@ -579,7 +579,7 @@
     {
       "operation": "modify_alert_notes",
       "title": "Modify Alert Notes",
-      "description": "Modify the notes from a specified alert in ZeroFox based on the alert ID and notes you have specified.",
+      "description": "Modify the notes of specified alert ID in ZeroFox.",
       "category": "investigation",
       "annotation": "modify_alert_notes",
       "enabled": true,
@@ -596,12 +596,12 @@
         },
         {
           "title": "Notes",
-          "description": "Specify the notes based on which you want to modify in ZeroFox.",
+          "description": "Specify the notes you wish to include while updating the alert notes.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Specify the notes based on which you want to modify in ZeroFox.",
+          "tooltip": "Specify the notes you wish to include while updating the alert notes.",
           "name": "notes"
         }
       ],
@@ -637,12 +637,12 @@
         },
         {
           "title": "Strict Name Matching",
-          "description": "Select the type of string matching used for comparing entity names to impersonator names.",
+          "description": "Specifies the type of string matching used for comparing entity names to impersonator names. You can set it to true or false.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "checkbox",
-          "tooltip": "Select the type of string matching used for comparing entity names to impersonator names.",
+          "tooltip": "Specifies the type of string matching used for comparing entity names to impersonator names. You can set it to true or false.",
           "name": "strict_name_matching"
         },
         {
@@ -749,12 +749,12 @@
         },
         {
           "title": "Page Number",
-          "description": "Specify the page from which you want this operation to return results based on the page size.",
+          "description": "Specify the page from which you want this operation to return results.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Specify the page from which you want this operation to return results based on the page size.",
+          "tooltip": "Specify the page from which you want this operation to return results.",
           "name": "page"
         }
       ],
@@ -800,12 +800,12 @@
         },
         {
           "title": "Content",
-          "description": "Specify the content to be considered a threat based on which you want to submit threat in ZeroFox.",
+          "description": "Specify the specific content you wish to report as a threat in ZeroFox.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Specify the content to be considered a threat based on which you want to submit threat in ZeroFox.",
+          "tooltip": "Specify the specific content you wish to report as a threat in ZeroFox.",
           "name": "source"
         },
         {
@@ -851,12 +851,12 @@
         },
         {
           "title": "Notes",
-          "description": "Specify the notes to include in submission based on which you want to submit threat in ZeroFox.",
+          "description": "Specify the notes you want to include in the submission for reporting a threat in ZeroFox.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Specify the notes to include in submission based on which you want to submit threat in ZeroFox.",
+          "tooltip": "Specify the notes you want to include in the submission for reporting a threat in ZeroFox.",
           "name": "notes"
         }
       ],
